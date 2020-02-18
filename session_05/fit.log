@@ -1,0 +1,111 @@
+
+
+*******************************************************************************
+Tue Feb  4 11:09:59 2020
+
+
+FIT:    data read from "eigen_tridiagonal2.dat" using ($1):($2)
+        format = x:z
+        x range restricted to [2.00000 : 4.00000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1*x + b1
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1           
+   0 2.7762370071e+02   0.00e+00  1.96e+00    1.000000e+00   1.000000e+00
+   5 5.1030000000e-08  -8.29e-04  1.96e-05   -2.000807e+00   4.087530e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 5.103e-08
+rel. change during last iteration : -8.28682e-09
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.000159734
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.5515e-08
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = -2.00081         +/- 0.0002373    (0.01186%)
+b1              = 0.408753         +/- 0.0006124    (0.1498%)
+
+correlation matrix of the fit parameters:
+                a1     b1     
+a1              1.000 
+b1             -0.991  1.000 
+
+
+*******************************************************************************
+Tue Feb  4 11:10:40 2020
+
+
+FIT:    data read from "eigen_tridiagonal2.dat" using ($1):($2)
+        format = x:z
+        x range restricted to [2.00000 : 4.00000]
+        #datapoints = 4
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1*x + b1
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1           
+   0 2.7762370071e+02   0.00e+00  1.96e+00    1.000000e+00   1.000000e+00
+   5 5.1030000000e-08  -8.29e-04  1.96e-05   -2.000807e+00   4.087530e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 5.103e-08
+rel. change during last iteration : -8.28682e-09
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.000159734
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.5515e-08
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = -2.00081         +/- 0.0002373    (0.01186%)
+b1              = 0.408753         +/- 0.0006124    (0.1498%)
+
+correlation matrix of the fit parameters:
+                a1     b1     
+a1              1.000 
+b1             -0.991  1.000 
+
+
+*******************************************************************************
+Tue Feb  4 11:12:03 2020
+
+
+FIT:    data read from "eigen_tridiagonal2.dat" using ($1):($2)
+        format = x:z
+        x range restricted to [0.00000 : 4.00000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f1(x)
+	f1(x) = a1*x + b1
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a1            b1           
+   0 3.7540830700e+02   0.00e+00  1.56e+00    1.000000e+00   1.000000e+00
+   4 5.1589034758e-02  -7.89e-06  1.56e-04   -1.943458e+00   2.771950e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.051589
+rel. change during last iteration : -7.89115e-11
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0858479
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00736986
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = -1.94346         +/- 0.03682      (1.894%)
+b1              = 0.277195         +/- 0.07239      (26.12%)
+
+correlation matrix of the fit parameters:
+                a1     b1     
+a1              1.000 
+b1             -0.919  1.000 
