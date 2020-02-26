@@ -39,6 +39,7 @@ typedef struct			// define a type to hold parameters
   double f_ext;			// amplitude of external force 
   double omega_ext;		// frequency of external force 
   double phi_ext;		// phase angle for external force 
+  double b;                     // viscous damping parameter
 }
 force_parameters;		// now we can define a structure of this type
 				//   using the keyword "force_parameters" 
@@ -64,6 +65,7 @@ main ()
   double p = 2.;
   double x0 = 0.;               // initial position
   double v0 = 1.;               // initial velocity
+  double b = 0.;
 
   double h = 0.001;		// initialize mesh spacing 
   double tmin = 0.;		// starting t value 
@@ -88,7 +90,8 @@ main ()
 	  cout << " [9] t_min = " << setprecision(5) << tmin << "\t";
 	  cout << "[10] t_max = " << setprecision(5) << tmax << "\t\t";
 	  cout << "[11] h = " << setprecision(5) << h << endl; 
-	  cout << "[12] plot_skip = " << plot_skip << endl;
+	  cout << "[12] plot_skip = " << plot_skip << "\t";
+          cout << "[13] b = " << setprecision(5) << b << endl;
 	  cout << "\nWhat do you want to change? [0 for none] ";
 	  cin >> answer;
 	  cout << endl;
@@ -145,6 +148,10 @@ main ()
 	      cout << " enter plot_skip: ";
 	      cin >> plot_skip;
 	      break;
+            case 13:
+              cout << " enter b: ";
+              cin >> b;
+              break;
 	    default:
 	      break;
 	    }
@@ -166,6 +173,7 @@ main ()
       rhs_parameters.k = k;
       rhs_parameters.m = m;
       rhs_parameters.p = p;
+      rhs_parameters.b = b;
       rhs_parameters.f_ext = f_ext;
       rhs_parameters.omega_ext = omega_ext;
       rhs_parameters.phi_ext = phi_ext;
@@ -240,10 +248,12 @@ double
 rhs (double t, double y[], int i, void *params_ptr)
 {
   double x = y[0];              // local x value
+  double v = y[1];
 
   double k = ((force_parameters *) params_ptr)->k;   // local force parameters
   double m = ((force_parameters *) params_ptr)->m;
   double p = ((force_parameters *) params_ptr)->p;
+  double b = ((force_parameters *) params_ptr)->b;
 
   double f_ext = ((force_parameters *) params_ptr)->f_ext;
   double omega_ext = ((force_parameters *) params_ptr)->omega_ext;
@@ -260,15 +270,15 @@ rhs (double t, double y[], int i, void *params_ptr)
     {
       if (x == 0)
 	{
-	  return (F_ext / m);
+	  return ((F_ext - b*v) / m);
 	}
       else if (x < 0)
 	{
-	  return ((F_ext + k * pow (fabs (x), (p - 1))) / m);
+	  return ((F_ext - b*v + k * pow (fabs (x), (p - 1))) / m);
 	}
       else if (x > 0)
 	{
-	  return ((F_ext - k * pow (fabs (x), (p - 1))) / m);
+	  return ((F_ext - b*v - k * pow (fabs (x), (p - 1))) / m);
 	}
     }
 

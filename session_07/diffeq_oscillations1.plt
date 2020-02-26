@@ -9,7 +9,7 @@ k = (2.*pi)**2
 m = 1
 omega = sqrt(k/m)
 set xlabel 't'
-set ylabel 'y(t)'
+set ylabel 'x(t)'
 plot "diffeq_oscillations.dat" using ($1):($2) title 'p=?' with lines 
 #plot "diffeq_oscillations.dat" using ($1):($2) title 'p=?' with lines # , \
 #  (1/omega)*sin(omega*x)

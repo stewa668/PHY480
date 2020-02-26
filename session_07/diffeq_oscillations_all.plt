@@ -41,5 +41,6 @@ set title 'Oscillations: Energy'
 set xlabel 't'
 set ylabel 'energy'
 plot "diffeq_oscillations.dat" using ($1):($4) title 'KE(t)' with lines, \
-     "diffeq_oscillations.dat" using ($1):($5) title 'PE(t)' with lines
+     "diffeq_oscillations.dat" using ($1):($5) title 'PE(t)' with lines, \
+     "diffeq_oscillations.dat" using ($1):(($4)+($5)) title 'E(t)' with lines
  
