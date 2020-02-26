@@ -183,8 +183,8 @@ GnuplotPipe::gnuplot_cmd (const string &plot_cmd_local)
   cmd_stream << plot_cmd_local << std::endl;  // add in a return
   // std::cout << "cmd: " << cmd_stream.str() << std::endl;
   
-  fprintf (gp_cmd, cmd_stream.str().c_str());
-  fflush (gp_cmd);
+  // fprintf (gp_cmd, cmd_stream.str().c_str());
+  // fflush (gp_cmd);
 
   return (0);
 }

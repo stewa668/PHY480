@@ -128,6 +128,17 @@ main (void)
   my_file3.close();    // close the output file
   cout << "Look at " << my_filename_stream.str() 
        << " to see if this worked." << endl << endl;
-
+  
+  string heyajimbo;
+  for (int j = 0 ; j <= 3 ; j++)
+  {
+  my_filename_stream.str ("");  // clear the string stream
+  my_filename_stream << "heyajimbo" << j << ".out";
+  heyajimbo = my_filename_stream.str();
+  ofstream my_file4;    // now for a filename
+  my_file4.open (heyajimbo.c_str());  // use .c_str() to convert to a char*
+  my_file4 << "This is file " << j << endl;
+  my_file4.close();
+  }
   return (0);
 }
