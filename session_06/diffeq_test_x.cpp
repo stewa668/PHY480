@@ -45,25 +45,24 @@ main (void)
   void *params_ptr;		   // void pointer passed to functions 
   f_parameters funct_parameters;   // parameters for the function 
 
-  const int N = 1;		// size of arrays of y functions
-  double y_euler[N], y_rk4[N];	// arrays of y functions 
+  const int N = 2;		// size of arrays of y functions
+  double y_rk4[N];	// arrays of y functions 
 
-  ofstream out ("diffeq_test.dat");	// open the output file 
+  ofstream out ("diffeq_test_x.dat");	// open the output file 
 
   funct_parameters.alpha = 1.;	// function parameter to be passed 
-  funct_parameters.beta = 1.;	// function parameter to be passed
+  funct_parameters.beta = 0.;	// function parameter to be passed
   params_ptr = &funct_parameters;	// structure to pass to function 
 
   double tmin = 0.;		// starting t value 
-  double tmax = 3.;		// last t value 
-  y_euler[0] = 1.0;		// initial condition for y(t) 
+  double tmax = 10.;		// last t value 
   y_rk4[0] = 1.0;		// initial condition for y(t) 
+  y_rk4[1] = 0.;		// initial condition for y(t) 
 
   // print out a header line and the first set of points 
-  out << "#      t           y_euler(t)         y_rk4(t)        y_exact(t) \n";
-  out << scientific << setprecision (9)
+  out << "#      t           y_rk4(t)        y_exact(t) \n";
+  out << scientific << setprecision (16)
     << tmin << "  "
-    << y_euler[0] << "  "
     << y_rk4[0] << "  " << exact_answer (tmin, params_ptr) << endl;
 
   double h = 0.1;		// initialize mesh spacing 
@@ -72,17 +71,14 @@ main (void)
   {
 
     // find y(t+h) and output vs. t+h 
-    euler (N, t, y_euler, h, rhs, params_ptr);	// Euler's algorithm 
-
     runge4 (N, t, y_rk4, h, rhs, params_ptr);	        // 4th order R-K 
 
-    out << scientific << setprecision (9)
+    out << scientific << setprecision (16)
       << t + h << "  "
-      << y_euler[0] << "  "
       << y_rk4[0] << "  " << exact_answer (t + h, params_ptr) << endl;
   }
 
-  cout << "data stored in diffeq_test.dat\n";
+  cout << "data stored in diffeq_test_x.dat\n";
   out.close ();			// close the output file 
 
   return (0);			// successful completion 
@@ -98,11 +94,15 @@ double
 rhs (double t, double y[], int i, void *params_ptr)
 {
   double a = ((f_parameters *) params_ptr)->alpha;
-  // double b = ((f_parameters *) params_ptr)->beta; 
+  //double b = ((f_parameters *) params_ptr)->beta; 
 
   if (i == 0)
   {
-    return (-a * t * y[0]);
+    return (a*y[1] + 0*t);
+  }
+  if (i == 1)
+  {
+    return (-a*y[0] + 0*t);
   }
 
   return (1);			// something's wrong if we get here 
@@ -118,7 +118,7 @@ exact_answer (double t, void *params_ptr)
 {
   // recover a and b from the void pointer params_ptr
   double a = ((f_parameters *) params_ptr)->alpha;
-  double b = ((f_parameters *) params_ptr)->beta;
+  //double b = ((f_parameters *) params_ptr)->beta;
 
-  return (b * exp (-a * t * t / 2.));
+  return (a * cos(t));
 }

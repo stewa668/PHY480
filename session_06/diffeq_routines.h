@@ -18,6 +18,10 @@
 extern int euler ( const int N, double t, double y[], double h,
 	    double (*f) (double t, double y[], int i, void *params_ptr), 
             void *params_ptr );
+
+extern int runge2 ( const int N, double t, double y[], double h,
+            double (*f) (double t, double y[], int i, void *params_ptr),
+            void *params_ptr );
  
 extern int runge4 ( const int N, double t, double y[], double h,
 	    double (*f) (double t, double y[], int i, void *params_ptr), 

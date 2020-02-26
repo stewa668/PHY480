@@ -38,51 +38,52 @@ typedef struct			// define a type to hold parameters
 f_parameters;			// now we can define a structure of this type
 				//   using the keyword "f_parameters" 
 
+const double pi = 4.*atan(1.);
 //************************** main program ****************************
 int
 main (void)
 {
-  void *params_ptr;		   // void pointer passed to functions 
-  f_parameters funct_parameters;   // parameters for the function 
+  void *params_ptr;		// void pointer passed to functions 
+  f_parameters funct_parameters;	// parameters for the function 
 
   const int N = 1;		// size of arrays of y functions
-  double y_euler[N], y_rk4[N];	// arrays of y functions 
+  double y_euler[N], y_rk2[N], y_rk4[N];	// arrays of y functions 
 
-  ofstream out ("diffeq_test.dat");	// open the output file 
+  ofstream out ("diffeq_test_h.dat");	// open the output file 
 
-  funct_parameters.alpha = 1.;	// function parameter to be passed 
-  funct_parameters.beta = 1.;	// function parameter to be passed
+  funct_parameters.alpha = 2.;	// function parameter to be passed 
+  funct_parameters.beta = 4.*atan(1.);	// function parameter to be passed
   params_ptr = &funct_parameters;	// structure to pass to function 
 
   double tmin = 0.;		// starting t value 
-  double tmax = 3.;		// last t value 
-  y_euler[0] = 1.0;		// initial condition for y(t) 
-  y_rk4[0] = 1.0;		// initial condition for y(t) 
+  double tmax = 1.;		// last t value 
 
-  // print out a header line and the first set of points 
-  out << "#      t           y_euler(t)         y_rk4(t)        y_exact(t) \n";
-  out << scientific << setprecision (9)
-    << tmin << "  "
-    << y_euler[0] << "  "
-    << y_rk4[0] << "  " << exact_answer (tmin, params_ptr) << endl;
+  for (double h = 1.; h >= 1e-8; h = h / 2.)
+    {
+      y_euler[0] = 0.0;		// initial condition for y(t) 
+      y_rk2[0] = 0.0;           // initial condition for y(t)
+      y_rk4[0] = 0.0;		// initial condition for y(t) 
 
-  double h = 0.1;		// initialize mesh spacing 
 
-  for (double t = tmin; t <= tmax; t += h)
-  {
+      for (double t = tmin; t <= tmax; t += h)
+	{
 
-    // find y(t+h) and output vs. t+h 
-    euler (N, t, y_euler, h, rhs, params_ptr);	// Euler's algorithm 
+	  // find y(t+h) and output vs. t+h 
+	  euler (N, t, y_euler, h, rhs, params_ptr);	// Euler's algorithm 
+          runge2 (N, t, y_rk2, h, rhs, params_ptr);     // 2nd order R-K
+	  runge4 (N, t, y_rk4, h, rhs, params_ptr);	// 4th order R-K 
 
-    runge4 (N, t, y_rk4, h, rhs, params_ptr);	        // 4th order R-K 
-
-    out << scientific << setprecision (9)
-      << t + h << "  "
-      << y_euler[0] << "  "
-      << y_rk4[0] << "  " << exact_answer (t + h, params_ptr) << endl;
-  }
-
-  cout << "data stored in diffeq_test.dat\n";
+	  if (t == 1. - h)
+	    {
+	      out << scientific << setprecision (16)
+		<< h << "  "
+		<< y_euler[0] << "  "
+                << y_rk2[0] << "  "
+		<< y_rk4[0] << "  " << exact_answer (1., params_ptr) << endl;
+	    }
+	}
+    }
+  cout << "data stored in diffeq_test_h.dat\n";
   out.close ();			// close the output file 
 
   return (0);			// successful completion 
@@ -98,12 +99,13 @@ double
 rhs (double t, double y[], int i, void *params_ptr)
 {
   double a = ((f_parameters *) params_ptr)->alpha;
-  // double b = ((f_parameters *) params_ptr)->beta; 
+  double b = ((f_parameters *) params_ptr)->beta; 
 
   if (i == 0)
-  {
-    return (-a * t * y[0]);
-  }
+    {
+      //return (-a * t * y[0]);
+      return (a*cos(a*b*t) + y[0] - y[0]);
+    }
 
   return (1);			// something's wrong if we get here 
 }
@@ -120,5 +122,6 @@ exact_answer (double t, void *params_ptr)
   double a = ((f_parameters *) params_ptr)->alpha;
   double b = ((f_parameters *) params_ptr)->beta;
 
-  return (b * exp (-a * t * t / 2.));
+  //return (b * exp (-a * t * t / 2.));
+  return (sin(a*b*t)/b);
 }

@@ -64,6 +64,54 @@ euler (const int N, double t, double y[], double h,
 }
 
 
+//************************************************************************
+//
+//   2nd Order Runge-Kutta Differential Equation Solver
+//
+// This routine takes all of the y's one step, from t to t+h.
+//  The original values of y[0], y[1], etc. are lost.
+//
+// inputs:
+//   N --- number of y(t)'s
+//   t --- independent variable
+//   y[] --- vector of y(t)'s
+//   h --- step size
+//   f --- function for the right hand sides
+//   *params_ptr --- pointer to parameters for rhs function f
+//
+// outputs:
+//   y[] --- predictions for the values of y(t+h)
+//
+// Notes:
+//   * The algorithm is from Eqs. (6.47)-(6.48) in the Session 6 notes.
+//
+//***********************************************************************
+int
+runge2 (const int N, double t, double y[], double h,
+        double (*f) (double t, double y[], int i, void *params_ptr),
+        void *params_ptr)
+{
+  double y1[NMAX];  // intermediate y values
+  double k1[NMAX], k2[NMAX]; // Runge-Kutta notation
+
+  for (int i = 0; i < N; i++)
+  {
+    k1[i] = h * f (t, y, i, params_ptr);
+    y1[i] = y[i] + k1[i] / 2.;  // argument for k2
+  }
+
+  for (int i = 0; i < N; i++)
+  {
+    k2[i] = h * f (t + h / 2., y1, i, params_ptr);
+  }
+
+  for (int i = 0; i < N; i++)
+  {
+    y[i] += k2[i];
+  }
+
+  return (0);                   // successful completion
+}
 
 
 
