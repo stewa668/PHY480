@@ -1,0 +1,13 @@
+I don't feel like actually doing this, because it seems a bit trivial
+assuming I am thinking of the question right. You just need to have 
+some measure of cumulative unsigned error. (I am assuming the exact 
+function is known) You can use mean absolute error or least squares 
+method to get a measure of how close the two functions are. If you 
+do not know the exact wavefunction, then your approach will be less
+trivial, but the same idea can be applied. The error measurement
+will go down as more dimensions are added, by setting a limit on this,
+you can decide when the change is small enough that you can consider 
+your wavefunction exact. (NOTE, this will be dependent on basis. Maybe
+a safety net one can apply os to compare the error between the current 
+and the one two back, to help with cases where the basis set switches 
+between even and odd functions, for example.)
