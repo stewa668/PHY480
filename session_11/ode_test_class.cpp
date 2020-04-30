@@ -83,11 +83,18 @@ main ()
   
   double mu = 2;             // parameter for the diff-eq 
   Rhs_VdP vdp_rhs_1 (mu);    // set up the right side of the diff-eq
+  Rhs_VdP vdp_rhs_2 (3.);    // set up the right side of the diff-eq
     
   Ode vdp_ode_1 (vdp_rhs_1, eps_abs, eps_rel, "rk45");
+  Ode vdp_ode_2 (vdp_rhs_2, eps_abs, eps_rel, "rk45");
   x0 = -1.5;
   v0 = 2.0;
   evolve_and_print(vdp_ode_1, vdp_rhs_1, x0, v0, tmin, tmax, delta_t);
+  evolve_and_print(vdp_ode_1, vdp_rhs_1, 1.0, 0.0, tmin, tmax, delta_t);
+  evolve_and_print(vdp_ode_1, vdp_rhs_1, 0.1, 0.0, tmin, tmax, delta_t);
+  evolve_and_print(vdp_ode_2, vdp_rhs_2, x0, v0, tmin, tmax, delta_t);
+  evolve_and_print(vdp_ode_2, vdp_rhs_2, 1.0, 0.0, tmin, tmax, delta_t);
+  evolve_and_print(vdp_ode_2, vdp_rhs_2, 0.1, 0.0, tmin, tmax, delta_t);
   
   return 0;
 }

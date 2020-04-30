@@ -114,7 +114,7 @@ my_integrand (double *x, size_t dim, void *)
   
   for (int i = 0; i < int(dim); i++)
     {
-      sum += x[i]; 
+      sum += (x[i]-1.) * (x[i]+1.) * exp(-x[i]*x[i]/10) * cos(x[i]); 
     }
   
   return sum*sum;

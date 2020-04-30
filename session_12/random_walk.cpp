@@ -86,6 +86,7 @@ main (void)
       out << x << " " << y << endl;   // output after the step is taken
     }
   cout << "Output " << npts << " random walk steps to random_walk.dat." << endl; 
+  cout << sqrt(x*x + y*y) << endl;
 
   gsl_rng_free (rng_ptr);	// free the random number generator
   out.close ();			// close the output file

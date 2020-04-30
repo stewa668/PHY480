@@ -139,6 +139,7 @@ main (void)
 
   // allocate space for a covariance matrix of size p by p
   gsl_matrix *covariance_ptr = gsl_matrix_alloc (p, p);
+  gsl_matrix *jacob_ptr = gsl_matrix_alloc (n, p);
 
   double y[N], sigma[N];   // the data is in y and the error bar in sigma
   struct data my_data = { n, y, sigma };   // combine into a structure
@@ -209,7 +210,8 @@ main (void)
   while (status == GSL_CONTINUE && iteration < max_iterations);
 
   // calculate the covariance matrix of the best-fit parameters
-  gsl_multifit_covar (solver_ptr->J, 0.0, covariance_ptr);
+  gsl_multifit_fdfsolver_jac (solver_ptr, jacob_ptr); 
+  gsl_multifit_covar (jacob_ptr, 0.0, covariance_ptr);
 
   // print out the covariance matrix using the gsl function (not elegant!)
   cout << endl << "Covariance matrix: " << endl;
