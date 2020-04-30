@@ -73,7 +73,7 @@ main (void)
   int T_skip = 1000;		// every T_skip points means once every T_ext
   double h = T_ext / double (T_skip);	// initialize mesh spacing 
   double tmin = 0.;		// starting t value 
-  double tmax = 50.;		// last t value 
+  double tmax = 100.;		// last t value 
   double plot_min = tmin;	// first t value to plot 
   double plot_max = tmax;	// last t value to plot 
   int plot_skip = 10;		// plot every plot_skip points

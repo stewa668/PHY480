@@ -1,0 +1,525 @@
+
+
+*******************************************************************************
+Wed Apr 29 07:00:24 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * sin(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 3.7772423151e+02   0.00e+00  2.96e+01    1.000000e+00   1.000000e+00   1.000000e+00
+  11 4.7255373974e+01  -7.13e-01  2.96e-03    3.752936e-02   1.054054e+00  -2.068051e+00
+
+After 11 iterations the fit converged.
+final sum of squares of residuals : 47.2554
+rel. change during last iteration : -7.12512e-06
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.268805
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0722559
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0375294        +/- 0.01508      (40.17%)
+b               = 1.05405          +/- 0.02274      (2.157%)
+c               = -2.06805         +/- 1.63         (78.83%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.173  1.000 
+c              -0.167 -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:04:16 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 3.7755020615e+02   0.00e+00  2.93e+01    1.000000e+00   1.000000e+00   1.000000e+00
+  11 4.6850301406e+01  -8.37e-02  2.93e-01    5.113621e-02   9.466678e-01   7.007435e-01
+
+After 11 iterations the fit converged.
+final sum of squares of residuals : 46.8503
+rel. change during last iteration : -8.374e-07
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.26765
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0716365
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0511362        +/- 0.01495      (29.24%)
+b               = 0.946668         +/- 0.01665      (1.759%)
+c               = 0.700743         +/- 1.193        (170.2%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.153  1.000 
+c              -0.148 -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:04:38 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c             b             a            
+   0 4.6850301406e+01   0.00e+00  1.42e+00    7.007435e-01   9.466678e-01   5.113621e-02
+   1 4.6850269590e+01  -6.79e-02  1.42e-01    7.026655e-01   9.466656e-01   5.114264e-02
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 46.8503
+rel. change during last iteration : -6.79102e-07
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.26765
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0716365
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = 0.702665         +/- 1.193        (169.7%)
+b               = 0.946666         +/- 0.01665      (1.759%)
+a               = 0.0511426        +/- 0.01495      (29.24%)
+
+correlation matrix of the fit parameters:
+                c      b      a      
+c               1.000 
+b              -0.970  1.000 
+a              -0.148  0.153  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:05:04 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 4.6850269590e+01   0.00e+00  1.42e+00    5.114264e-02   9.466656e-01   7.026655e-01
+   1 4.6850254196e+01  -3.29e-02  1.42e-01    5.114646e-02   9.466399e-01   7.045722e-01
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 46.8503
+rel. change during last iteration : -3.2859e-07
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.26765
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0716365
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0511465        +/- 0.01495      (29.24%)
+b               = 0.94664          +/- 0.01665      (1.759%)
+c               = 0.704572         +/- 1.192        (169.2%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.153  1.000 
+c              -0.148 -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:05:47 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 4.6850254196e+01   0.00e+00  1.42e+00    5.114646e-02   9.466399e-01   7.045722e-01
+   1 4.6850238470e+01  -3.36e-01  1.42e-01    5.114936e-02   9.466180e-01   7.064229e-01
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 46.8502
+rel. change during last iteration : -3.35669e-07
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.26765
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0716365
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0511494        +/- 0.01495      (29.23%)
+b               = 0.946618         +/- 0.01665      (1.759%)
+c               = 0.706423         +/- 1.192        (168.8%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.153  1.000 
+c              -0.148 -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:06:16 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 4.6850238470e+01   0.00e+00  1.42e+00    5.114936e-02   9.466180e-01   7.064229e-01
+  26 4.6850113113e+01   0.00e+00  1.42e+05    5.115830e-02   9.462534e-01   7.368379e-01
+
+After 26 iterations the fit converged.
+final sum of squares of residuals : 46.8501
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.26765
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0716363
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0511583        +/- 0.01495      (29.23%)
+b               = 0.946253         +/- 0.01665      (1.76%)
+c               = 0.736838         +/- 1.193        (161.8%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.153  1.000 
+c              -0.148 -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:07:12 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = .37 * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 8.0208296362e+01   0.00e+00  1.03e+01    5.115830e-02   9.462534e-01   7.368379e-01
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Wed Apr 29 07:07:17 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = .37 * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   b             c            
+   0 8.0197958500e+01   0.00e+00  1.26e+01    9.468977e-01   7.305467e-01
+   1 8.0197958500e+01   0.00e+00  1.26e+08    9.468977e-01   7.305467e-01
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 80.198
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 655
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.349914
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.12244
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b               = 0.946898         +/- 0.002971     (0.3137%)
+c               = 0.730547         +/- 0.213        (29.16%)
+
+correlation matrix of the fit parameters:
+                b      c      
+b               1.000 
+c              -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:07:39 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 4.6851423149e+01   0.00e+00  1.42e+00    5.115830e-02   9.468977e-01   7.305467e-01
+   3 4.6850110663e+01   0.00e+00  1.42e+06    5.113473e-02   9.463010e-01   7.335760e-01
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 46.8501
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.267649
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0716363
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0511347        +/- 0.01495      (29.24%)
+b               = 0.946301         +/- 0.01666      (1.76%)
+c               = 0.733576         +/- 1.193        (162.6%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.153  1.000 
+c              -0.148 -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:08:32 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 3.7755020615e+02   0.00e+00  2.93e+01    1.000000e+00   1.000000e+00   1.000000e+00
+  11 4.6850301406e+01  -8.37e-02  2.93e-01    5.113621e-02   9.466678e-01   7.007435e-01
+
+After 11 iterations the fit converged.
+final sum of squares of residuals : 46.8503
+rel. change during last iteration : -8.374e-07
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.26765
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0716365
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.0511362        +/- 0.01495      (29.24%)
+b               = 0.946668         +/- 0.01665      (1.759%)
+c               = 0.700743         +/- 1.193        (170.2%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.153  1.000 
+c              -0.148 -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:12:39 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'c' is zero.
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.0122771681e+02   0.00e+00  1.18e+01    4.000000e-01   1.000000e+00   1.000000e-30
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Wed Apr 29 07:13:00 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 4.7352195217e+01   0.00e+00  1.13e+00   -3.672141e-02   1.047677e+00   4.000000e-01
+   5 4.7254914488e+01  -1.86e-01  1.13e-03   -3.706545e-02   1.051191e+00  -3.001169e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 47.2549
+rel. change during last iteration : -1.85694e-06
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.268803
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0722552
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -0.0370654       +/- 0.01506      (40.63%)
+b               = 1.05119          +/- 0.02308      (2.195%)
+c               = -0.300117        +/- 1.654        (551.1%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.170  1.000 
+c               0.165 -0.970  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:14:41 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * cos(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.0116474012e+02   0.00e+00  1.18e+01    4.000000e-01   1.000000e+00   3.000000e-01
+   6 4.7688272919e+01  -3.00e-01  1.18e+01    6.357115e-03   1.014923e+00   2.053981e-01
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 47.6883
+rel. change during last iteration : -2.99746e-06
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.270033
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0729178
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.00635712       +/- 0.01502      (236.3%)
+b               = 1.01492          +/- 0.1364       (13.44%)
+c               = 0.205398         +/- 9.799        (4771%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.148  1.000 
+c              -0.140 -0.971  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:19:55 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = .385 * sin(a*x + b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.2518621770e+02   0.00e+00  9.46e+00    6.890000e-01  -5.550000e-01
+   7 7.2151582357e-03  -2.06e-01  9.46e-07    6.890140e-01   1.305099e+00
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 0.00721516
+rel. change during last iteration : -2.05979e-06
+
+degrees of freedom    (FIT_NDF)                        : 655
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00331896
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.10155e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.689014         +/- 2.75e-05     (0.003991%)
+b               = 1.3051           +/- 0.001999     (0.1532%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.971  1.000 
+
+
+*******************************************************************************
+Wed Apr 29 07:21:06 2020
+
+
+FIT:    data read from "diffeq_pendulum_0.2.dat" using ($1):($2)
+        format = x:z
+        #datapoints = 657
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a * sin(b*x + c)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 1.2021420959e-02   0.00e+00  7.89e+00    3.860000e-01   6.890000e-01   1.300000e+00
+   5 1.4761093463e-03  -5.18e-04  7.89e-05    3.808460e-01   6.889537e-01   1.309462e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.00147611
+rel. change during last iteration : -5.18038e-09
+
+degrees of freedom    (FIT_NDF)                        : 654
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00150235
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.25705e-06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.380846         +/- 8.322e-05    (0.02185%)
+b               = 0.688954         +/- 1.264e-05    (0.001835%)
+c               = 1.30946          +/- 0.0009189    (0.07017%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.095  1.000 
+c              -0.094 -0.972  1.000 
